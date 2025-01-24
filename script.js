@@ -22,7 +22,7 @@ const choice = document.querySelectorAll('option');
 
 choice.forEach(choice => {
     choice.addEventListener('click', () =>{
-        playRound(choice.value)
+        if (!gameOver) playRound(choice.value);
     })
 })
 
@@ -44,8 +44,9 @@ getComputerChoice()
 let humanScore = 0; 
 let computerScore = 0;
 let round = 0
+let gameOver = false;
 
-function playRound() {
+function playRound(UserSelection) {
 
 }
 
