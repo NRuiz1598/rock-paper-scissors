@@ -2,17 +2,17 @@ const body  = document.querySelector('body');
 
 const rock = document.createElement('button');
 rock.textContent = "Rock";
-rock.classList("option");
-rock.appendChild(rock);
+rock.classList.add("option");
+body.appendChild(rock);
 
 const paper = document.createElement('button');
 paper.textContent = "Paper";
-paper.classList("option")
+paper.classList.add("option")
 body.appendChild(paper);
 
 const scissors = document.createElement('button');
 scissors.textContent = "Scissors";
-scissors.classList("option")
+scissors.classList.add("option")
 body.appendChild(scissors);
 
 function getComputerChoice() {
