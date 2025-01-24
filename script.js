@@ -18,6 +18,14 @@ scissors.classList.add("option");
 scissors.value = "Scissors";
 body.appendChild(scissors);
 
+const choice = document.querySelectorAll('option');
+
+choice.forEach(choice => {
+    choice.addEventListener('click', () =>{
+        playRound(choice.value)
+    })
+})
+
 function getComputerChoice() {
     random = Math.floor(Math.random() * 3) + 1;
 
