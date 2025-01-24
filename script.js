@@ -18,11 +18,19 @@ scissors.classList.add("option");
 scissors.value = "Scissors";
 body.appendChild(scissors);
 
-const choice = document.querySelectorAll('option');
+const container = document.createElement('div');
+const ScoreCont = document.createElement('div');
+const resultCont = document.createElement('div');
 
-choice.forEach(choice => {
-    choice.addEventListener('click', () =>{
-        if (!gameOver) playRound(choice.value);
+container.appendChild(ScoreCont);
+container.appendChild(resultCont);
+body.appendChild(container);
+
+const choice = document.querySelectorAll('.option');
+
+choice.forEach(choices => {
+    choices.addEventListener('click', () =>{
+        if (!gameOver) playRound(choices.value);
     })
 })
 
@@ -47,7 +55,10 @@ let round = 0
 let gameOver = false;
 
 function playRound(userSelection) {
-    if(gameOver) return;
+    if(gameOver) {
+        return;
+    }
+
     const computerSelection = getComputerChoice();
 
     if (userSelection === "Rock" && computerSelection === "Scissors") {
@@ -69,10 +80,17 @@ function playRound(userSelection) {
     if (userSelection === "Scissors" && computerSelection === "Rock") {
         computerScore++
     }
+
+    round++;
+
+    if (round === 5) {
+        gameOver = true;
+        result()
+    }
+
 }
 
 
-playRound();
 
 function result() {
     if (humanScore > computerScore) {
@@ -84,5 +102,5 @@ function result() {
     }
 }
 
-result()
+
 
