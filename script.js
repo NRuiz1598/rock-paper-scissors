@@ -83,6 +83,8 @@ function playRound(userSelection) {
 
     round++;
 
+    ScoreCont.textContent = `Round ${round}: You: ${humanScore} Cpu: ${computerScore}`;
+
     if (round === 5) {
         gameOver = true;
         result()
