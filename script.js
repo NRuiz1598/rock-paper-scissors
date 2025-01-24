@@ -96,11 +96,11 @@ function playRound(userSelection) {
 
 function result() {
     if (humanScore > computerScore) {
-        console.log('You are the winner, congratulations!')
+        resultCont.textContent = "You are the Winner, congratulations!"
     }else if (humanScore <  computerScore) {
-        console.log('You lost try again :c') 
+        resultCont.textContent = "You lost, try again :c"
     }else {
-        console.log('Its a Draw nice try!')
+        resultCont.textContent = "Its a Draw, Nice Try!"
     }
 }
 
