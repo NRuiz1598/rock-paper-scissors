@@ -46,8 +46,29 @@ let computerScore = 0;
 let round = 0
 let gameOver = false;
 
-function playRound(UserSelection) {
+function playRound(userSelection) {
+    if(gameOver) return;
+    const computerSelection = getComputerChoice();
 
+    if (userSelection === "Rock" && computerSelection === "Scissors") {
+        humanScore++;
+    }else if (userSelection === "Rock" && computerSelection === "Papper") {
+        computerScore++;
+    }
+
+    if (userSelection === "Paper" && computerSelection === "Rock") {
+        humanScore++;
+    }else if (userSelection === "Paper" && computerSelection === "Scissors") {
+        computerScore++;
+    }
+
+    if (userSelection === "Scissors" && computerSelection === "Paper") {
+        humanScore++;
+    }
+
+    if (userSelection === "Scissors" && computerSelection === "Rock") {
+        computerScore++
+    }
 }
 
 
