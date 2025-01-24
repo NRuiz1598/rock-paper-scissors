@@ -104,5 +104,19 @@ function result() {
     }
 }
 
+const resetBtn =  document.createElement('button');
+resetBtn.textContent = "Reset";
+container.appendChild(resetBtn);
 
 
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    round = 0;
+    gameOver = false;
+
+    ScoreCont.textContent = ""
+    resultCont.textContent = ""
+}
+
+resetBtn.addEventListener('click', resetGame);
